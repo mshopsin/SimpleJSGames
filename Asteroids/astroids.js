@@ -4,6 +4,8 @@ var Asteroids = (function() {
     this.centerY = centerY;
     this.radius = radius;
     this.velocity = velocity;
+    this.angle = 0;
+    this.acceleration = 0;
   }
 
   Asteroid.MAX_RADIUS = 25;
@@ -42,6 +44,11 @@ var Asteroids = (function() {
     ctx.fill();
 
   };
+
+  function GameController(){
+    //setup keybindings
+  }
+
   Game.NUMBER_ASTEROIDS = 15;
   function Game(width, height, num){
     this.width = width;
@@ -75,6 +82,7 @@ var Asteroids = (function() {
   Game.prototype.update = function() {
 
 
+    this.ship.update();
 
     this.stepAsteroids();
 

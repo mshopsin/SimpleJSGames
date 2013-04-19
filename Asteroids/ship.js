@@ -2,8 +2,8 @@ var Fleet = (function(){ //<--
   Ship.SHEILD_RADIUS = 14;
   function Ship(x,y, game){
     this.velocity = new Object();
-    this.velocity['x'] = 0;
-    this.velocity['y'] = 0;
+    this.velocity['x'] = 5;
+    this.velocity['y'] = 5;
     this.centerX = x;
     this.centerY = y;
     this.game = game;
@@ -18,6 +18,8 @@ var Fleet = (function(){ //<--
     this.velocity['x'] += dx;
     this.velocity['y'] += dy;
   };
+
+
 
   Ship.prototype.draw = function(ctx){
     // ctx.fillStyle = "black";
