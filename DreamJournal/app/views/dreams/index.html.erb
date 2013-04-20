@@ -2,9 +2,9 @@
 <div class="container">
 <div id="dream-list"></div>
 <div id="dream-form">
-  <!--input type="text" id="dream-text-field"-->
-  <!--button id="submit-dream">Dream Big!</button-->
+  <input type="text" id="dream-text-field">
   <br>
+  <button id="submit-dream">Dream Big!</button>
   <button id="submit-refresh">Refresh!</button>
 </div>
 </div>
@@ -12,14 +12,26 @@
 <script type="text/javascript">
 $(function () {
   var dreamListEl = $('#dream-list');
-  var dreamsView = new DS.DreamView(dreamListEl);
   var dreamRefreshButtonEl = $('#submit-refresh');
+  var dreamsView = new DS.DreamView(dreamListEl);
+
+  var dreamFieldEl = $('#dream-text-field');
+  var dreamBigButtonEl = $('#submit-dream');
   var dreamIndexView = new DS.DreamIndexView(
     dreamRefreshButtonEl,
     dreamsView
   ).bind();
 
+  var dreamsForm = new DS.DreamFormView(
+    dreamsView,
+    dreamFieldEl,
+    dreamBigButtonEl,
+    function (newDream){
+      newDream.save(dreamsView);
+    }
+  ).bind();
 
-  DS.Dream.refresh();
+
+  DS.Dream.refresh(dreamsView);
 });
 </script>

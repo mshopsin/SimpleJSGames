@@ -3,7 +3,7 @@ class DreamsController < ApplicationController
     @dream = Dream.create!(params[:dream])
 
     respond_to do |format|
-      format.json { render :json => @secret }
+      format.json { render :json => @dream }
     end
   end
 
