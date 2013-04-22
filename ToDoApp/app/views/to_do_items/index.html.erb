@@ -1,0 +1,31 @@
+<html>
+<head>
+<script type="text/javascript">
+$(function(){
+
+  TD.ToDoView.setup();
+
+});
+</script>
+</head>
+<body>
+  <div class = "container" >
+    <div class="well" >
+      <div class= "row-fluid">
+        <div class="span12" ><h1> To Do App </h1></div>
+      </div>
+      <table class="table" id="todo-items">
+        <th>
+          <td><h3>Status</h3></td><td><h3>Item</h3></td>
+        </th>
+      </table>
+      <div class= "row-fluid">
+        <div class="span2"><h5><a id="complete-all-btn" href="#">Complete All</a></h5></div>
+        <div class="span2"><h5><a id="remove-all-btn" href="#">Remove All</a></h5></div>
+        <div class="span6"><input type="text" id="item-input-field"></div>
+        <div class="span2"><h5><a id="add-item-btn" href="#">Add Item</a></h5></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
