@@ -11,6 +11,8 @@
 
 <script type="text/javascript">
 $(function () {
+ //$('dropdown').dropdown();
+
   var dreamListEl = $('#dream-list');
   var dreamRefreshButtonEl = $('#submit-refresh');
   var dreamsView = new DS.DreamView(dreamListEl);
@@ -27,7 +29,7 @@ $(function () {
     dreamFieldEl,
     dreamBigButtonEl,
     function (newDream){
-      newDream.save(dreamsView);
+      return newDream.save(dreamsView);
     }
   ).bind();
 

@@ -1,6 +1,13 @@
 DreamJournal::Application.routes.draw do
+
+
+  get "dream_themes/create"
+
   root :to => "dreams#index"
   resources :dreams
+  resources :themes
+  resources :dream_themes
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

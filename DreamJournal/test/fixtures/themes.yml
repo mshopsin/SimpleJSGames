@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tag: MyString
+  dream_theme_id: 1
+
+two:
+  tag: MyString
+  dream_theme_id: 1
