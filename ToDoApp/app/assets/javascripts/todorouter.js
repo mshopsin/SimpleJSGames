@@ -33,5 +33,42 @@ TD.ToDoRouter = (function() {
         });
     };
 
+    my.updateItem = function(toDoItem, callback){
+      var that = this;
+      that.callback = callback;
+      $.ajax({
+        url: "/to_do_items/" + toDoItem.id,
+        type: "put",
+        dataType: "json",
+        data: {
+          todoitem: {
+            id: toDoItem.id,
+            status: toDoItem.status,
+            item: toDoItem.item
+          }
+        },
+        statusCode: {
+          200: function(){
+            TD.ToDoView.refresh();
+          }
+        }
+      });
+    };
+
+    my.removeItem = function(removalItem, callback){
+      var that = this;
+      $.ajax({
+        url: "/to_do_items/" + removalItem.id,
+        type: "post",
+        dataType: "json",
+        data: {"_method":"delete"},
+        statusCode: {
+          200: function(){
+            TD.ToDoView.refresh();
+          }
+        }
+      });
+    };
+
   return my;
 })();

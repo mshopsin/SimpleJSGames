@@ -23,5 +23,14 @@ TD.ToDoModel = (function(){
     });
   }
 
+  my.changeStatus = function(item, callback){
+
+    TD.ToDoRouter.updateItem(item,callback);
+  };
+
+  my.removeItem = function(item, callback){
+    TD.ToDoRouter.removeItem(item,callback);
+  }
+
   return my;
 })();
