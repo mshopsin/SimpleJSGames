@@ -3,11 +3,24 @@
 /* universal */
 
 html {
-  overflow-y: scroll;
+//  overflow-y: scroll;
+//  overflow-x: scroll;
 }
 
 body {
   padding-top: 60px;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url('todo2.jpg')
+}
+#container {
+    width: inherit;
+    height: inherit;
+    margin: 0;
+    padding: 0;
+    background-color: pink;
 }
 
 section {
